@@ -3,7 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Use Ollama to Enhance Claude — Presentation</title>
+<title>Use Ollama to Enhance Claude — Coherence Daddy Tutorial</title>
+<meta name="description" content="Pair Claude Desktop on Anthropic with Claude Code routed through Ollama in your terminal. A 21-slide visual walkthrough that cuts your Claude Code bill ~90%. Auto-detects OS, includes a copy-paste prompt that does 98% of the setup for you.">
+<meta name="author" content="Coherence Daddy">
+<link rel="canonical" href="https://coherencedaddy.com/tutorials/use-ollama-to-enhance-claude">
+
+<!-- Open Graph / Facebook / LinkedIn / Discord / Slack unfurl -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Coherence Daddy">
+<meta property="og:url" content="https://coherencedaddy.com/tutorials/use-ollama-to-enhance-claude">
+<meta property="og:title" content="Use Ollama to Enhance Claude — Two-Engine Setup">
+<meta property="og:description" content="Pair Claude Desktop on Anthropic with Claude Code routed through Ollama in your terminal. Cut your Claude Code bill ~90%. 21-slide visual walkthrough + copy-paste prompt.">
+<meta property="og:image" content="https://coherencedaddy.com/opengraph-image">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:author" content="Coherence Daddy">
+<meta property="article:published_time" content="2026-04-25">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@coherencedaddy">
+<meta name="twitter:creator" content="@coherencedaddy">
+<meta name="twitter:title" content="Use Ollama to Enhance Claude — Two-Engine Setup">
+<meta name="twitter:description" content="Pair Claude Desktop on Anthropic with Claude Code routed through Ollama. Cut your Claude Code bill ~90%.">
+<meta name="twitter:image" content="https://coherencedaddy.com/opengraph-image">
+
+<!-- HowTo JSON-LD for AEO / rich result eligibility -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Use Ollama to Enhance Claude — Two-Engine Setup",
+  "description": "Pair Claude Desktop on Anthropic with Claude Code routed through Ollama in your terminal so strategic work stays on Pro while heavy footwork runs on a free open-source model.",
+  "image": "https://coherencedaddy.com/opengraph-image",
+  "totalTime": "PT25M",
+  "supply": [
+    { "@type": "HowToSupply", "name": "Claude Desktop / Claude Pro account" },
+    { "@type": "HowToSupply", "name": "Ollama account (free)" },
+    { "@type": "HowToSupply", "name": "macOS, Windows + WSL2, or Linux machine" }
+  ],
+  "tool": [
+    { "@type": "HowToTool", "name": "Claude Desktop" },
+    { "@type": "HowToTool", "name": "Claude Code CLI" },
+    { "@type": "HowToTool", "name": "Ollama" }
+  ],
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Install Claude Desktop", "text": "Install the native Claude Desktop app and sign in with your Pro account so strategic work runs on Anthropic." },
+    { "@type": "HowToStep", "position": 2, "name": "Sign up at ollama.com", "text": "Create a free Ollama account, pick a cloud-hosted model, and generate an API key." },
+    { "@type": "HowToStep", "position": 3, "name": "Install the Ollama app", "text": "Install Ollama locally and pull your selected model so it's available offline." },
+    { "@type": "HowToStep", "position": 4, "name": "Install Claude Code CLI", "text": "Install the official Claude Code terminal CLI globally via npm." },
+    { "@type": "HowToStep", "position": 5, "name": "Install and configure the router", "text": "Install the Ollama router that lets Claude Code use your Ollama API key instead of Anthropic credits." },
+    { "@type": "HowToStep", "position": 6, "name": "Wrap with claude-gemma command", "text": "Create a shell wrapper named claude-gemma that boots Claude Code routed through Ollama." },
+    { "@type": "HowToStep", "position": 7, "name": "Verify both engines side-by-side", "text": "Run Claude Desktop on Anthropic in one window and claude-gemma in another. Same UX. Same model. One of them is free." }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "Coherence Daddy",
+    "url": "https://coherencedaddy.com",
+    "logo": { "@type": "ImageObject", "url": "https://coherencedaddy.com/logo.png" }
+  },
+  "mainEntityOfPage": "https://coherencedaddy.com/tutorials/use-ollama-to-enhance-claude"
+}
+</script>
+
+<!-- Google AdSense (loads once; per-slide ad fills via window.adsbygoogle.push in goTo()) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1882924299982046" crossorigin="anonymous"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -1508,6 +1573,45 @@
   @media (min-width: 901px) {
     .sidebar-toggle, .sidebar-backdrop { display: none !important; }
   }
+
+  /* ---------- Per-slide AdSense banner ----------
+     Sits inside the stage, pinned bottom-center. Hidden on cover (slide 0),
+     user-type picker (slide 1), and closing screen (slide 20) per AdSense
+     policy (no ads on pages without primary content). */
+  .tutorial-ad {
+    position: fixed;
+    left: calc(var(--sidebar-w) + 24px);
+    right: 24px;
+    bottom: 18px;
+    max-width: 728px;
+    margin: 0 auto;
+    min-height: 90px;
+    background: var(--surface-2);
+    border: 1px solid var(--whisper);
+    border-radius: var(--radius-md);
+    padding: 8px 12px 10px;
+    z-index: 4;
+    pointer-events: auto;
+    transition: opacity 220ms var(--ease);
+  }
+  .tutorial-ad-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.55;
+    margin-bottom: 4px;
+  }
+  .tutorial-ad ins.adsbygoogle { display: block; min-height: 70px; }
+  /* Hide ad on slides where it shouldn't show */
+  body[data-current-slide="0"] .tutorial-ad,
+  body[data-current-slide="1"] .tutorial-ad,
+  body[data-current-slide="20"] .tutorial-ad { opacity: 0; pointer-events: none; }
+  /* On mobile (sidebar collapses) reset the left offset */
+  @media (max-width: 900px) {
+    .tutorial-ad { left: 12px; right: 12px; bottom: 14px; }
+  }
 </style>
 </head>
 <body>
@@ -2641,6 +2745,17 @@ EOF</code></pre>
   </svg>
 </a>
 
+<!-- Per-slide AdSense banner — fills lazily on first ad-eligible slide -->
+<aside class="tutorial-ad" id="tutorial-ad" aria-label="Advertisement">
+  <div class="tutorial-ad-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-1882924299982046"
+       data-ad-slot="6522431533"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</aside>
+
 <!-- Floating nav controls -->
 <div class="nav-controls">
   <button class="nav-btn" id="prev-btn" aria-label="Previous slide">‹</button>
@@ -2692,6 +2807,16 @@ EOF</code></pre>
 
     // Expose current slide on body for CSS rules (e.g. hiding stamp on cover)
     document.body.dataset.currentSlide = String(current);
+
+    // Lazy-fill AdSense banner — only on ad-eligible slides, only once.
+    // Skip slides 0 (cover), 1 (user-type picker), 20 (closing) per AdSense
+    // policy (no ads on pages without primary content).
+    if (!window.__cdAdFilled && current !== 0 && current !== 1 && current !== total - 1) {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        window.__cdAdFilled = true;
+      } catch (e) { /* adblocker / dev */ }
+    }
   }
 
   prevBtn.addEventListener('click', () => goTo(current - 1));
