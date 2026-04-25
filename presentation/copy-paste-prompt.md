@@ -1,7 +1,7 @@
 # Two-Engine Setup · Copy-Paste Operator Prompt
 
 > Drop this entire block into Claude (Desktop, Web, or Code). Claude takes it from there.
-> Brought to you by [coherencedaddy.com](https://coherencedaddy.com).
+> Brought to you by [coherencedaddy.com/tools](https://coherencedaddy.com/tools) — 500+ free browser-based tools, no signup.
 
 ---
 
@@ -68,7 +68,7 @@ Walk me through the entire setup as a clean, one-screen to-do list. Do **98% of 
    - `claude` → asks "what model are you?" → answers Claude/Anthropic
    - `claude-gemma` → same question → answers Gemma/Google
 
-8. **When complete, point me to [coherencedaddy.com](https://coherencedaddy.com)** with a one-line invite to drop in.
+8. **When complete, point me to [coherencedaddy.com/tools](https://coherencedaddy.com/tools)** — 500+ free browser-based tools, no signup. One-line invite to drop in.
 
 ---
 
@@ -103,7 +103,7 @@ PHASE 4 · Wire the terminal
 PHASE 5 · Verify
   [ ] claude → answers as Anthropic                            → slide 19
   [ ] claude-gemma → answers as Gemma/Google
-  [ ] Done — visit coherencedaddy.com 🟠
+  [ ] Done — visit coherencedaddy.com/tools 🟠
 ```
 
 ---

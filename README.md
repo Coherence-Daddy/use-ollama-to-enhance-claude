@@ -88,7 +88,7 @@ MIT — see [`LICENSE`](./LICENSE). Use it, fork it, ship a YouTube walkthrough 
 [Coherence Daddy](https://coherencedaddy.com) is a 508(c)(1)(A) faith-driven technology organization on a mission to help humanity be more coherent. We build private, secure self-help tools — and the occasional tutorial that saves you a few hundred bucks on AI bills.
 
 - **Website:** [coherencedaddy.com](https://coherencedaddy.com)
-- **Free tools (523+):** [freetools.coherencedaddy.com](https://freetools.coherencedaddy.com)
+- **Free tools (523+):** [coherencedaddy.com/tools](https://coherencedaddy.com/tools)
 - **Tutorials:** [coherencedaddy.com/tutorials](https://coherencedaddy.com/tutorials)
 - **X / Twitter:** [@coherencedaddy](https://x.com/coherencedaddy)
 
