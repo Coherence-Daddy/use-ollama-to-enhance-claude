@@ -3,72 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Use Ollama to Enhance Claude — Coherence Daddy Tutorial</title>
-<meta name="description" content="Pair Claude Desktop on Anthropic with Claude Code routed through Ollama in your terminal. A 21-slide visual walkthrough that cuts your Claude Code bill ~90%. Auto-detects OS, includes a copy-paste prompt that does 98% of the setup for you.">
-<meta name="author" content="Coherence Daddy">
-<link rel="canonical" href="https://coherencedaddy.com/tutorials/use-ollama-to-enhance-claude">
-
-<!-- Open Graph / Facebook / LinkedIn / Discord / Slack unfurl -->
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="Coherence Daddy">
-<meta property="og:url" content="https://coherencedaddy.com/tutorials/use-ollama-to-enhance-claude">
-<meta property="og:title" content="Use Ollama to Enhance Claude — Two-Engine Setup">
-<meta property="og:description" content="Pair Claude Desktop on Anthropic with Claude Code routed through Ollama in your terminal. Cut your Claude Code bill ~90%. 21-slide visual walkthrough + copy-paste prompt.">
-<meta property="og:image" content="https://coherencedaddy.com/opengraph-image">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="article:author" content="Coherence Daddy">
-<meta property="article:published_time" content="2026-04-25">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@coherencedaddy">
-<meta name="twitter:creator" content="@coherencedaddy">
-<meta name="twitter:title" content="Use Ollama to Enhance Claude — Two-Engine Setup">
-<meta name="twitter:description" content="Pair Claude Desktop on Anthropic with Claude Code routed through Ollama. Cut your Claude Code bill ~90%.">
-<meta name="twitter:image" content="https://coherencedaddy.com/opengraph-image">
-
-<!-- HowTo JSON-LD for AEO / rich result eligibility -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Use Ollama to Enhance Claude — Two-Engine Setup",
-  "description": "Pair Claude Desktop on Anthropic with Claude Code routed through Ollama in your terminal so strategic work stays on Pro while heavy footwork runs on a free open-source model.",
-  "image": "https://coherencedaddy.com/opengraph-image",
-  "totalTime": "PT25M",
-  "supply": [
-    { "@type": "HowToSupply", "name": "Claude Desktop / Claude Pro account" },
-    { "@type": "HowToSupply", "name": "Ollama account (free)" },
-    { "@type": "HowToSupply", "name": "macOS, Windows + WSL2, or Linux machine" }
-  ],
-  "tool": [
-    { "@type": "HowToTool", "name": "Claude Desktop" },
-    { "@type": "HowToTool", "name": "Claude Code CLI" },
-    { "@type": "HowToTool", "name": "Ollama" }
-  ],
-  "step": [
-    { "@type": "HowToStep", "position": 1, "name": "Install Claude Desktop", "text": "Install the native Claude Desktop app and sign in with your Pro account so strategic work runs on Anthropic." },
-    { "@type": "HowToStep", "position": 2, "name": "Sign up at ollama.com", "text": "Create a free Ollama account, pick a cloud-hosted model, and generate an API key." },
-    { "@type": "HowToStep", "position": 3, "name": "Install the Ollama app", "text": "Install Ollama locally and pull your selected model so it's available offline." },
-    { "@type": "HowToStep", "position": 4, "name": "Install Claude Code CLI", "text": "Install the official Claude Code terminal CLI globally via npm." },
-    { "@type": "HowToStep", "position": 5, "name": "Install and configure the router", "text": "Install the Ollama router that lets Claude Code use your Ollama API key instead of Anthropic credits." },
-    { "@type": "HowToStep", "position": 6, "name": "Wrap with claude-gemma command", "text": "Create a shell wrapper named claude-gemma that boots Claude Code routed through Ollama." },
-    { "@type": "HowToStep", "position": 7, "name": "Verify both engines side-by-side", "text": "Run Claude Desktop on Anthropic in one window and claude-gemma in another. Same UX. Same model. One of them is free." }
-  ],
-  "publisher": {
-    "@type": "Organization",
-    "name": "Coherence Daddy",
-    "url": "https://coherencedaddy.com",
-    "logo": { "@type": "ImageObject", "url": "https://coherencedaddy.com/logo.png" }
-  },
-  "mainEntityOfPage": "https://coherencedaddy.com/tutorials/use-ollama-to-enhance-claude"
-}
-</script>
-
-<!-- Google AdSense (loads once; per-slide ad fills via window.adsbygoogle.push in goTo()) -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1882924299982046" crossorigin="anonymous"></script>
-
+<title>Use Ollama to Enhance Claude — Presentation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -1573,45 +1508,6 @@
   @media (min-width: 901px) {
     .sidebar-toggle, .sidebar-backdrop { display: none !important; }
   }
-
-  /* ---------- Per-slide AdSense banner ----------
-     Sits inside the stage, pinned bottom-center. Hidden on cover (slide 0),
-     user-type picker (slide 1), and closing screen (slide 20) per AdSense
-     policy (no ads on pages without primary content). */
-  .tutorial-ad {
-    position: fixed;
-    left: calc(var(--sidebar-w) + 24px);
-    right: 24px;
-    bottom: 18px;
-    max-width: 728px;
-    margin: 0 auto;
-    min-height: 90px;
-    background: var(--surface-2);
-    border: 1px solid var(--whisper);
-    border-radius: var(--radius-md);
-    padding: 8px 12px 10px;
-    z-index: 4;
-    pointer-events: auto;
-    transition: opacity 220ms var(--ease);
-  }
-  .tutorial-ad-label {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--muted);
-    opacity: 0.55;
-    margin-bottom: 4px;
-  }
-  .tutorial-ad ins.adsbygoogle { display: block; min-height: 70px; }
-  /* Hide ad on slides where it shouldn't show */
-  body[data-current-slide="0"] .tutorial-ad,
-  body[data-current-slide="1"] .tutorial-ad,
-  body[data-current-slide="20"] .tutorial-ad { opacity: 0; pointer-events: none; }
-  /* On mobile (sidebar collapses) reset the left offset */
-  @media (max-width: 900px) {
-    .tutorial-ad { left: 12px; right: 12px; bottom: 14px; }
-  }
 </style>
 </head>
 <body>
@@ -1708,7 +1604,7 @@
           big-picture work. Two engines, one bill.
         </p>
         <div class="cover-meta">
-          <span><span class="dot"></span> 19 slides · ~25 min setup</span>
+          <span><span class="dot"></span> 21 slides · ~25 min setup · model picker built in</span>
           <span><span class="dot" style="background: var(--blue);"></span> Pro plan + Ollama Cloud</span>
           <span><span class="dot" style="background: var(--success);"></span> macOS · Windows · Linux</span>
         </div>
@@ -1775,9 +1671,9 @@
             <span class="left">Operator prompt · paste into Claude</span>
             <button class="copy-btn" id="copy-prompt-btn" type="button">Copy</button>
           </div>
-<pre id="express-prompt-text"><code>You are my friendly setup operator for the Two-Engine Setup — running Claude Code in the terminal on Gemma (via Ollama) while keeping the Claude Desktop app on Anthropic.
+<pre id="express-prompt-text"><code>You are my friendly setup operator for the Two-Engine Setup — wiring up two terminal/desktop wrappers that route Claude Code (and the Claude Desktop app) through Ollama, while plain `claude` and the dock-launched Desktop app stay on Anthropic.
 
-I have the visual companion presentation open alongside this chat (21 slides). When I need a picture, you'll tell me which slide to open.
+I have the visual companion presentation open alongside this chat (~21 slides). When I need a picture, you'll tell me which slide to open.
 
 YOUR JOB
 Walk me through the entire setup as a clean, one-screen to-do list. Do 98% of the footwork yourself: detect my OS, check what's installed, write config files, run shell commands when you have a tool that can. When something genuinely requires my hands (a website signup, pasting an API key from a UI), tell me which slide to open, give me one crystal-clear instruction, and wait for my confirmation before continuing.
@@ -1789,11 +1685,15 @@ OPERATING RULES
 4. Run commands when you can. Otherwise hand me a fenced code block and ask me to paste output back.
 5. One step at a time. Never dump multiple steps in one message.
 6. Trap the gotchas:
-   - Auth conflict: if my ~/.claude/settings.json has an env block setting ANTHROPIC_API_KEY, that conflicts with my Pro/Max OAuth token. Remove the env block before adding the wrapper.
+   - Auth conflict: if my ~/.claude/settings.json has an env block setting ANTHROPIC_API_KEY, that conflicts with my Pro/Max OAuth token. Remove the env block before adding the wrappers.
    - Two different keys in the router config: top-level APIKEY stays as "local-only". The Ollama key goes in Providers[0].api_key.
-   - Plain claude must still hit Anthropic after we're done. The claude-gemma wrapper sets env vars only inside the function, never globally.
-7. Verify both engines at the end. Two terminal tabs: claude (Anthropic) and claude-gemma (Gemma/Google). Both confirm the model.
-8. When complete, point me to coherencedaddy.com/tools (500+ free tools, no signup).
+   - Plain `claude` and the dock-launched Desktop app must still hit Anthropic afterward. Wrappers set env vars only inside their function, never globally.
+   - Desktop env vars only apply at process launch — quit Claude Desktop fully before running claude-desktop-gemma (the wrapper handles this on macOS).
+7. Verify all three routes at the end:
+   - claude → Anthropic
+   - claude-gemma → picker → Ollama in the terminal
+   - claude-desktop-gemma → picker → Ollama in the Desktop app
+8. When complete, point me to coherencedaddy.com.
 
 PHASES (these become your to-do list)
 PHASE 1 · Discovery
@@ -1805,20 +1705,24 @@ PHASE 2 · Desktop side
   [ ] Sign in with Pro account                         → slide 09
 PHASE 3 · Ollama side
   [ ] Sign up at ollama.com                            → slide 10
-  [ ] Pick a cloud model (recommend gemma4:31b-cloud)  → slide 11
+  [ ] Pull all four cloud models (gemma4:31b-cloud,
+      glm-5.1:cloud, kimi-k2.6:cloud, qwen3-coder-next) → slide 11
   [ ] Generate an Ollama API key — copy it now         → slide 12
   [ ] Install Ollama desktop app / daemon              → slide 13
-  [ ] Run ollama signin and ollama pull <model>        → slide 14
-PHASE 4 · Wire the terminal
+  [ ] Run ollama signin and ollama pull <each model>   → slide 14
+PHASE 4 · Wire terminal + desktop
   [ ] Install Claude Code CLI                          → slide 15
   [ ] Install router: npm i -g @musistudio/claude-code-router  → slide 16
-  [ ] Write ~/.claude-code-router/config.json          → slide 17
-  [ ] Append claude-gemma wrapper to ~/.zshrc or ~/.bashrc  → slide 18
+  [ ] Write ~/.claude-code-router/config.json (all 4)  → slide 17
+  [ ] Append claude-gemma + claude-desktop-gemma wrappers
+      with model picker to ~/.zshrc or ~/.bashrc      → slide 18
   [ ] Source shell rc
 PHASE 5 · Verify
   [ ] claude → answers as Anthropic                    → slide 19
-  [ ] claude-gemma → answers as Gemma/Google
-  [ ] Done — visit coherencedaddy.com/tools
+  [ ] claude-gemma → picker → answers as chosen Ollama model
+  [ ] claude-desktop-gemma → picker → Desktop relaunches and
+      answers as chosen Ollama model
+  [ ] Done — visit coherencedaddy.com
 
 Start by:
 1. Greeting me by name (ask if you don't know it).
@@ -1917,37 +1821,37 @@ Go.</code></pre>
     <section class="slide" data-slide="2">
       <div class="slide-inner">
         <div class="slide-eyebrow">The setup at a glance</div>
-        <h2>Two engines. One workflow.</h2>
-        <p class="lede">Desktop stays on Anthropic for thinking. Terminal moves to Ollama for doing.</p>
+        <h2>Two engines. Both surfaces.</h2>
+        <p class="lede">Anthropic for thinking. Ollama for doing. Either one — terminal or Desktop — can be flipped to either engine with one command.</p>
 
         <div class="engines">
           <div class="engine-card desktop">
             <div class="engine-label">
-              <span>Desktop App</span>
-              <span class="pill">Anthropic</span>
+              <span>Anthropic engine</span>
+              <span class="pill">Pro / Max</span>
             </div>
-            <div class="engine-title">Claude (Pro Plan)</div>
-            <div class="engine-engine">Engine: <strong>Sonnet / Opus</strong></div>
+            <div class="engine-title">Claude (Sonnet / Opus)</div>
+            <div class="engine-engine">Reach via: <strong>dock-launched Desktop · plain <code>claude</code></strong></div>
             <ul class="engine-uses">
               <li>Strategic planning & architecture</li>
               <li>Long-context analysis (1M tokens)</li>
               <li>PDFs, images, uploaded data</li>
-              <li>Project organization</li>
+              <li>Tricky reasoning, code review</li>
             </ul>
           </div>
           <span class="vs">+</span>
           <div class="engine-card terminal">
             <div class="engine-label">
-              <span>Terminal</span>
-              <span class="pill">Ollama Cloud</span>
+              <span>Ollama engine</span>
+              <span class="pill">Cloud · free tier</span>
             </div>
-            <div class="engine-title">Claude Code (Routed)</div>
-            <div class="engine-engine">Engine: <strong>Gemma · Qwen · GLM</strong></div>
+            <div class="engine-title">Gemma · GLM · Kimi · Qwen3-Coder</div>
+            <div class="engine-engine">Reach via: <strong><code>claude-gemma</code> · <code>claude-desktop-gemma</code></strong></div>
             <ul class="engine-uses">
               <li>File edits & code generation</li>
               <li>Tests, lint, sub-agents</li>
               <li>Loops & batch tasks</li>
-              <li>Anything repetitive</li>
+              <li>Long chats without burning credits</li>
             </ul>
           </div>
         </div>
@@ -2169,8 +2073,8 @@ Go.</code></pre>
     <section class="slide" data-slide="7">
       <div class="slide-inner">
         <div class="slide-eyebrow">Part B · Step 04 · Ollama</div>
-        <h2>Pick a cloud model.</h2>
-        <p class="lede">Cloud models run on Ollama's hardware — fast, free tier, no GPU strain on your Mac. Gemma is our pick; alternatives below.</p>
+        <h2>Pick your cloud models.</h2>
+        <p class="lede">Cloud models run on Ollama's hardware — fast, free tier, no GPU strain on your Mac. Pull <strong>all four</strong> below — the wrapper gives you a picker on launch so you can swap models per session.</p>
 
         <div class="mock">
           <div class="mock-chrome">
@@ -2191,22 +2095,22 @@ Go.</code></pre>
             <div class="model-grid">
               <div class="model-card selected">
                 <div class="model-name">gemma4:31b-cloud</div>
-                <div class="model-tag">Google · 31B</div>
+                <div class="model-tag">Google · 31B · default</div>
                 <span class="free-badge">Free tier</span>
               </div>
-              <div class="model-card">
-                <div class="model-name">qwen3-coder:480b-cloud</div>
-                <div class="model-tag">Alibaba · Coder</div>
-                <span class="free-badge">Free tier</span>
-              </div>
-              <div class="model-card">
+              <div class="model-card selected">
                 <div class="model-name">glm-5.1:cloud</div>
                 <div class="model-tag">Zhipu · MoE</div>
                 <span class="free-badge">Free tier</span>
               </div>
-              <div class="model-card">
-                <div class="model-name">deepseek-v3.1:671b-cloud</div>
-                <div class="model-tag">DeepSeek · Reasoning</div>
+              <div class="model-card selected">
+                <div class="model-name">kimi-k2.6:cloud</div>
+                <div class="model-tag">Moonshot · long-ctx</div>
+                <span class="free-badge">Free tier</span>
+              </div>
+              <div class="model-card selected">
+                <div class="model-name">qwen3-coder-next</div>
+                <div class="model-tag">Alibaba · Coder</div>
                 <span class="free-badge">Free tier</span>
               </div>
             </div>
@@ -2337,12 +2241,15 @@ Go.</code></pre>
     <section class="slide" data-slide="10">
       <div class="slide-inner">
         <div class="slide-eyebrow">Part B · Step 07 · Ollama</div>
-        <h2>Sign in & pull your model.</h2>
-        <p class="lede">Connect your local Ollama to your cloud account, then register the Gemma model.</p>
+        <h2>Sign in & pull all four models.</h2>
+        <p class="lede">Connect your local Ollama to your cloud account, then register every cloud model so the picker can offer them.</p>
 
         <span class="code-label">Terminal</span>
 <pre><code>ollama signin
 ollama pull gemma4:31b-cloud
+ollama pull glm-5.1:cloud
+ollama pull kimi-k2.6:cloud
+ollama pull qwen3-coder-next
 ollama list</code></pre>
 
         <div class="mock-term">
@@ -2355,15 +2262,20 @@ ollama list</code></pre>
             <div class="out-dim">Opening browser at https://ollama.com/auth/cli ...</div>
             <div class="ok">✓ Signed in as you@email.com</div>
             <div><span class="prompt">~ $</span> ollama pull gemma4:31b-cloud</div>
-            <div class="out-dim">pulling cloud manifest... done</div>
             <div class="ok">✓ Model registered: gemma4:31b-cloud</div>
+            <div><span class="prompt">~ $</span> ollama pull glm-5.1:cloud</div>
+            <div class="ok">✓ Model registered: glm-5.1:cloud</div>
+            <div><span class="prompt">~ $</span> ollama pull kimi-k2.6:cloud</div>
+            <div class="ok">✓ Model registered: kimi-k2.6:cloud</div>
+            <div><span class="prompt">~ $</span> ollama pull qwen3-coder-next</div>
+            <div class="ok">✓ Model registered: qwen3-coder-next</div>
             <div><span class="prompt">~ $</span> <span class="cursor"></span></div>
           </div>
         </div>
 
         <div class="callout success">
           <div class="callout-title success">Confirm before moving on</div>
-          After <code>ollama list</code>, you should see <code>gemma4:31b-cloud</code> in the table. If not, repeat <code>signin</code> and <code>pull</code>.
+          After <code>ollama list</code>, all four cloud models should appear in the table. If any are missing, rerun the matching <code>ollama pull</code>.
         </div>
       </div>
     </section>
@@ -2477,7 +2389,7 @@ ollama list</code></pre>
       "name": "ollama",
       "api_base_url": "http://localhost:11434/v1/chat/completions",
       "api_key": "PASTE_YOUR_OLLAMA_KEY_HERE",
-      "models": ["gemma4:31b-cloud", "qwen3-coder:480b-cloud", "glm-5.1:cloud"]
+      "models": ["gemma4:31b-cloud", "glm-5.1:cloud", "kimi-k2.6:cloud", "qwen3-coder-next"]
     }
   ],
   "Router": {
@@ -2513,26 +2425,63 @@ ollama list</code></pre>
     <!-- Slide 15 — C4 Wrapper -->
     <section class="slide" data-slide="14">
       <div class="slide-inner">
-        <div class="slide-eyebrow">Part C · Step 11 · Terminal</div>
-        <h2>Create a one-command launcher.</h2>
-        <p class="lede">Instead of starting the router and setting env vars by hand, make a single command: <code>claude-gemma</code>.</p>
+        <div class="slide-eyebrow">Part C · Step 11 · Terminal + Desktop</div>
+        <h2>Create launcher commands with a model picker.</h2>
+        <p class="lede">Two commands — one for the terminal (<code>claude-gemma</code>), one for the Desktop app (<code>claude-desktop-gemma</code>). Both pop a numbered menu so you can choose which Ollama model to launch with.</p>
 
         <div class="os-mac">
-          <span class="code-label">Terminal</span>
+          <span class="code-label">Terminal · macOS (zsh)</span>
 <pre><code>cat &gt;&gt; ~/.zshrc &lt;&lt;'EOF'
 
-# ── Two-Engine: Claude Code routed through Ollama ──
-claude-gemma() {
-  local model="${1:-gemma4:31b-cloud}"
+# ── Two-Engine: Claude routed through Ollama ──
+CLAUDE_OLLAMA_MODELS=(
+  "gemma4:31b-cloud"
+  "glm-5.1:cloud"
+  "kimi-k2.6:cloud"
+  "qwen3-coder-next"
+)
+
+_claude_pick_model() {
+  if [ -n "$1" ]; then echo "$1"; return; fi
+  echo "Pick a model:" &gt;&amp;2
+  local i=1
+  for m in "${CLAUDE_OLLAMA_MODELS[@]}"; do
+    echo "  $i) $m" &gt;&amp;2; i=$((i+1))
+  done
+  printf "Number [1]: " &gt;&amp;2
+  read choice
+  echo "${CLAUDE_OLLAMA_MODELS[${choice:-1}]}"
+}
+
+_claude_ensure_router() {
   if ! curl -sf http://127.0.0.1:3456/health &gt;/dev/null 2&gt;&amp;1; then
     nohup ccr start &gt; /tmp/ccr.log 2&gt;&amp;1 &amp;
     sleep 2
   fi
+}
+
+# Terminal: Claude Code via Ollama
+claude-gemma() {
+  local model; model=$(_claude_pick_model "$1") || return
+  _claude_ensure_router
   ANTHROPIC_BASE_URL="http://127.0.0.1:3456" \
   ANTHROPIC_API_KEY="local-only" \
   ANTHROPIC_MODEL="$model" \
   ANTHROPIC_SMALL_FAST_MODEL="$model" \
-  claude
+  claude "${@:2}"
+}
+
+# Desktop: Claude app via Ollama
+claude-desktop-gemma() {
+  local model; model=$(_claude_pick_model "$1") || return
+  _claude_ensure_router
+  osascript -e 'quit app "Claude"' 2&gt;/dev/null
+  sleep 1
+  ANTHROPIC_BASE_URL="http://127.0.0.1:3456" \
+  ANTHROPIC_API_KEY="local-only" \
+  ANTHROPIC_MODEL="$model" \
+  ANTHROPIC_SMALL_FAST_MODEL="$model" \
+  open -a "Claude"
 }
 EOF</code></pre>
           <p>Reload your shell:</p>
@@ -2540,12 +2489,31 @@ EOF</code></pre>
         </div>
 
         <div class="os-win">
-          <span class="code-label">WSL Terminal</span>
+          <span class="code-label">WSL Terminal (bash)</span>
+          <p style="font-size: 0.9rem; color: var(--muted);">On Windows, only <code>claude-gemma</code> works in WSL — <code>claude-desktop-gemma</code> is macOS-only (uses <code>osascript</code> and <code>open</code>). Launch the Windows Desktop app from PowerShell with env vars set if you want the Ollama route on Desktop.</p>
 <pre><code>cat &gt;&gt; ~/.bashrc &lt;&lt;'EOF'
 
-# ── Two-Engine: Claude Code routed through Ollama ──
+CLAUDE_OLLAMA_MODELS=(
+  "gemma4:31b-cloud"
+  "glm-5.1:cloud"
+  "kimi-k2.6:cloud"
+  "qwen3-coder-next"
+)
+
+_claude_pick_model() {
+  if [ -n "$1" ]; then echo "$1"; return; fi
+  echo "Pick a model:" &gt;&amp;2
+  local i=1
+  for m in "${CLAUDE_OLLAMA_MODELS[@]}"; do
+    echo "  $i) $m" &gt;&amp;2; i=$((i+1))
+  done
+  printf "Number [1]: " &gt;&amp;2
+  read choice
+  echo "${CLAUDE_OLLAMA_MODELS[$((${choice:-1}-1))]}"
+}
+
 claude-gemma() {
-  local model="${1:-gemma4:31b-cloud}"
+  local model; model=$(_claude_pick_model "$1") || return
   if ! curl -sf http://127.0.0.1:3456/health &gt;/dev/null 2&gt;&amp;1; then
     nohup ccr start &gt; /tmp/ccr.log 2&gt;&amp;1 &amp;
     sleep 2
@@ -2554,7 +2522,7 @@ claude-gemma() {
   ANTHROPIC_API_KEY="local-only" \
   ANTHROPIC_MODEL="$model" \
   ANTHROPIC_SMALL_FAST_MODEL="$model" \
-  claude
+  claude "${@:2}"
 }
 EOF</code></pre>
           <p>Reload your shell:</p>
@@ -2562,12 +2530,30 @@ EOF</code></pre>
         </div>
 
         <div class="os-linux">
-          <span class="code-label">Terminal</span>
+          <span class="code-label">Terminal · Linux (bash)</span>
 <pre><code>cat &gt;&gt; ~/.bashrc &lt;&lt;'EOF'
 
-# ── Two-Engine: Claude Code routed through Ollama ──
+CLAUDE_OLLAMA_MODELS=(
+  "gemma4:31b-cloud"
+  "glm-5.1:cloud"
+  "kimi-k2.6:cloud"
+  "qwen3-coder-next"
+)
+
+_claude_pick_model() {
+  if [ -n "$1" ]; then echo "$1"; return; fi
+  echo "Pick a model:" &gt;&amp;2
+  local i=1
+  for m in "${CLAUDE_OLLAMA_MODELS[@]}"; do
+    echo "  $i) $m" &gt;&amp;2; i=$((i+1))
+  done
+  printf "Number [1]: " &gt;&amp;2
+  read choice
+  echo "${CLAUDE_OLLAMA_MODELS[$((${choice:-1}-1))]}"
+}
+
 claude-gemma() {
-  local model="${1:-gemma4:31b-cloud}"
+  local model; model=$(_claude_pick_model "$1") || return
   if ! curl -sf http://127.0.0.1:3456/health &gt;/dev/null 2&gt;&amp;1; then
     nohup ccr start &gt; /tmp/ccr.log 2&gt;&amp;1 &amp;
     sleep 2
@@ -2576,33 +2562,48 @@ claude-gemma() {
   ANTHROPIC_API_KEY="local-only" \
   ANTHROPIC_MODEL="$model" \
   ANTHROPIC_SMALL_FAST_MODEL="$model" \
-  claude
+  claude "${@:2}"
 }
 EOF</code></pre>
           <p>Reload your shell:</p>
 <pre><code>source ~/.bashrc</code></pre>
-          <p style="font-size: 0.9rem; color: var(--muted);">If you use Zsh as your default shell, swap <code>~/.bashrc</code> for <code>~/.zshrc</code>.</p>
+          <p style="font-size: 0.9rem; color: var(--muted);">If you use Zsh, swap <code>~/.bashrc</code> for <code>~/.zshrc</code>. The Linux Desktop app accepts the same env-var trick — wrap it with whichever launcher your distro uses.</p>
         </div>
 
         <div class="mock-term">
           <div class="mock-term-chrome">
             <div class="mock-dots"><span></span><span></span><span></span></div>
-            <div class="title">~ — zsh — claude-gemma</div>
+            <div class="title">~ — zsh — claude-gemma picker</div>
           </div>
           <div class="mock-term-body">
             <div><span class="prompt">~ $</span> <span class="typewriter">claude-gemma</span></div>
-            <div class="out-dim" style="margin-top: 6px;">Starting router on :3456 ...</div>
-            <div class="ok">✓ Router healthy</div>
+            <div class="out-dim" style="margin-top: 6px;">Pick a model:</div>
+            <div class="out-dim">  1) gemma4:31b-cloud</div>
+            <div class="out-dim">  2) glm-5.1:cloud</div>
+            <div class="out-dim">  3) kimi-k2.6:cloud</div>
+            <div class="out-dim">  4) qwen3-coder-next</div>
+            <div class="out-dim">Number [1]: 3</div>
+            <div class="ok" style="margin-top: 4px;">✓ Router healthy</div>
             <div class="blue" style="margin-top: 4px;">▗ ▗   ▖ ▖  Claude Code v2.1.120</div>
-            <div class="blue">           gemma4:31b-cloud · API Usage Billing</div>
+            <div class="blue">           kimi-k2.6:cloud · Ollama Cloud</div>
             <div class="out-dim">  ▘▘ ▝▝    ~/Projects</div>
             <div style="margin-top: 6px;">&gt; <span class="cursor"></span></div>
           </div>
         </div>
 
         <div class="callout info">
-          <div class="callout-title info">Plain `claude` stays on Anthropic</div>
-          The env vars only set inside the function, so plain <code>claude</code> still uses Anthropic. <code>claude</code> = Anthropic. <code>claude-gemma</code> = Ollama. No file edits to switch.
+          <div class="callout-title info">Three routes, no file edits</div>
+          <ul style="margin-top: 6px; margin-left: 16px;">
+            <li><code>claude</code> → Anthropic in the terminal (unchanged)</li>
+            <li><code>claude-gemma</code> → picker → Ollama in the terminal</li>
+            <li><code>claude-desktop-gemma</code> → picker → Ollama in the Desktop app (macOS)</li>
+            <li>Dock-launched Desktop app → still Anthropic (unchanged)</li>
+          </ul>
+        </div>
+
+        <div class="callout warn" style="margin-top: 12px;">
+          <div class="callout-title warn">Skip the picker</div>
+          Pass the model directly to bypass the menu: <code>claude-gemma kimi-k2.6:cloud</code> or <code>claude-desktop-gemma qwen3-coder-next</code>.
         </div>
       </div>
     </section>
@@ -2611,48 +2612,61 @@ EOF</code></pre>
     <section class="slide" data-slide="15">
       <div class="slide-inner">
         <div class="slide-eyebrow">Part C · Step 12 · Verify</div>
-        <h2>Test both engines side by side.</h2>
-        <p class="lede">Open two Terminal tabs. Prove they're independent.</p>
+        <h2>Test all three routes side by side.</h2>
+        <p class="lede">Open three terminal tabs (or run them in sequence). Prove every route is independent.</p>
 
-        <div class="two-col">
+        <div class="two-col" style="grid-template-columns: 1fr 1fr 1fr;">
           <div>
-            <span class="code-label">Tab 1 · Anthropic</span>
+            <span class="code-label">Route 1 · Anthropic (terminal)</span>
 <pre><code>claude</code></pre>
-            <p style="font-size: 0.92rem;">Ask: <em>"What model are you?"</em><br>→ should answer <strong>Claude</strong>.</p>
+            <p style="font-size: 0.92rem;">Ask: <em>"What model are you?"</em><br>→ <strong>Claude</strong>.</p>
           </div>
           <div>
-            <span class="code-label">Tab 2 · Ollama</span>
+            <span class="code-label">Route 2 · Ollama (terminal)</span>
 <pre><code>claude-gemma</code></pre>
-            <p style="font-size: 0.92rem;">Ask: <em>"What model are you?"</em><br>→ should answer <strong>Gemma / Google</strong>.</p>
+            <p style="font-size: 0.92rem;">Pick from the menu, then ask.<br>→ <strong>Gemma / GLM / Kimi / Qwen</strong>.</p>
+          </div>
+          <div>
+            <span class="code-label">Route 3 · Ollama (Desktop app)</span>
+<pre><code>claude-desktop-gemma</code></pre>
+            <p style="font-size: 0.92rem;">Pick from the menu. Desktop relaunches.<br>→ Same Ollama answer, in the GUI.</p>
           </div>
         </div>
 
         <div class="mock-term">
           <div class="mock-term-chrome">
             <div class="mock-dots"><span></span><span></span><span></span></div>
-            <div class="title">claude (Anthropic)  /  claude-gemma (Ollama)</div>
+            <div class="title">claude / claude-gemma / claude-desktop-gemma</div>
           </div>
           <div class="mock-term-body">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px;">
               <div>
-                <div style="font-size: 0.66rem; letter-spacing: 0.1em; color: var(--blue); text-transform: uppercase; margin-bottom: 6px;">▌ Tab 1 · Anthropic</div>
+                <div style="font-size: 0.62rem; letter-spacing: 0.1em; color: var(--blue); text-transform: uppercase; margin-bottom: 6px;">▌ Anthropic · Terminal</div>
                 <div><span class="prompt">~ $</span> claude</div>
                 <div>&gt; what model are you?</div>
                 <div class="out-dim">I'm Claude, made by Anthropic.</div>
               </div>
               <div>
-                <div style="font-size: 0.66rem; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 6px;">▌ Tab 2 · Ollama</div>
+                <div style="font-size: 0.62rem; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 6px;">▌ Ollama · Terminal</div>
                 <div><span class="prompt">~ $</span> claude-gemma</div>
+                <div class="out-dim">Number [1]: 3</div>
                 <div>&gt; what model are you?</div>
-                <div class="out-dim">I'm Gemma, from Google.</div>
+                <div class="out-dim">I'm Kimi, from Moonshot AI.</div>
+              </div>
+              <div>
+                <div style="font-size: 0.62rem; letter-spacing: 0.1em; color: var(--success); text-transform: uppercase; margin-bottom: 6px;">▌ Ollama · Desktop</div>
+                <div><span class="prompt">~ $</span> claude-desktop-gemma</div>
+                <div class="out-dim">Number [1]: 4</div>
+                <div class="out-dim">→ Desktop relaunched</div>
+                <div class="out-dim">App answers as Qwen3 Coder.</div>
               </div>
             </div>
           </div>
         </div>
 
         <div class="callout success">
-          <div class="callout-title success">Both engines confirmed</div>
-          Two engines, totally separate. Plain <code>claude</code> + the Desktop app still hit Anthropic. <code>claude-gemma</code> burns zero Anthropic credits.
+          <div class="callout-title success">All three routes confirmed</div>
+          Three independent routes, no file edits to switch. Plain <code>claude</code> + the dock-launched Desktop app still hit Anthropic. The two wrappers route to Ollama and burn zero Anthropic credits.
         </div>
       </div>
     </section>
@@ -2662,11 +2676,11 @@ EOF</code></pre>
       <div class="slide-inner">
         <div class="slide-eyebrow">The payoff</div>
         <h2>Your new daily workflow.</h2>
-        <p class="lede">Mental model: <strong>plan in the Desktop app, do in the Terminal</strong>.</p>
+        <p class="lede">Mental model: <strong>plan with Anthropic, execute with Ollama — on whichever surface fits the task</strong>.</p>
 
         <div class="workflow">
           <div class="workflow-row desk">
-            <div class="label"><span class="dot"></span> Open Desktop app</div>
+            <div class="label"><span class="dot"></span> Desktop (dock) → Anthropic</div>
             <h4>Strategic mode</h4>
             <ul>
               <li>Drop in screenshots, PDFs, docs</li>
@@ -2677,19 +2691,29 @@ EOF</code></pre>
           </div>
           <div class="workflow-row term">
             <div class="label"><span class="dot"></span> Run claude-gemma</div>
-            <h4>Execution mode</h4>
+            <h4>Execution mode (terminal)</h4>
             <ul>
               <li>Paste the plan as first message</li>
-              <li>Let Gemma chew through edits</li>
-              <li>Run sub-agents for grep / lint</li>
-              <li>Loop until tests pass — no quota burn</li>
+              <li>Pick a model from the menu</li>
+              <li>Let it chew through edits + sub-agents</li>
+              <li>Loop until tests pass — no Anthropic burn</li>
+            </ul>
+          </div>
+          <div class="workflow-row term" style="border-color: var(--success);">
+            <div class="label"><span class="dot" style="background: var(--success);"></span> Run claude-desktop-gemma</div>
+            <h4>Long-form chat mode (GUI)</h4>
+            <ul>
+              <li>When you want the Desktop chat UX</li>
+              <li>but don't want to spend Anthropic credits</li>
+              <li>Pick a cheap cloud model from the menu</li>
+              <li>Quit + reopen from the dock to go back</li>
             </ul>
           </div>
         </div>
 
         <div class="callout">
-          <div class="callout-title accent">When to switch back to plain `claude`</div>
-          For terminal sessions that need real reasoning — refactoring complex logic, debugging weird race conditions, code review on a tricky PR — quit your <code>claude-gemma</code> session and start a normal <code>claude</code> session. Gemma is 80% as good for 0% of the cost; the other 20% are still worth Anthropic's price.
+          <div class="callout-title accent">When to switch back to Anthropic</div>
+          For tasks that need real reasoning — refactoring complex logic, debugging weird race conditions, code review on a tricky PR — quit your Ollama session and use plain <code>claude</code> (terminal) or the dock-launched Desktop app. Cheap models are 80% as good for 0% of the cost; the other 20% are still worth Anthropic's price.
         </div>
       </div>
     </section>
@@ -2704,10 +2728,11 @@ EOF</code></pre>
           Claude on hand for the work that demands it. Welcome to the cheap-and-cheerful
           half of agentic coding.
         </p>
-        <div class="cover-meta" style="justify-content: center;">
-          <span><span class="dot"></span> Use claude for Anthropic</span>
-          <span><span class="dot" style="background: var(--blue);"></span> claude-gemma for Ollama</span>
-          <span><span class="dot" style="background: var(--success);"></span> Desktop = Pro plan</span>
+        <div class="cover-meta" style="justify-content: center; flex-wrap: wrap;">
+          <span><span class="dot"></span> claude → Anthropic</span>
+          <span><span class="dot" style="background: var(--blue);"></span> claude-gemma → Ollama (terminal)</span>
+          <span><span class="dot" style="background: var(--success);"></span> claude-desktop-gemma → Ollama (Desktop)</span>
+          <span><span class="dot"></span> Dock launch → Anthropic Desktop</span>
         </div>
 
         <svg class="cd-wordmark" viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" aria-label="Coherence Daddy">
@@ -2736,7 +2761,7 @@ EOF</code></pre>
       <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/>
     </svg>
   </a>
-  <a href="https://github.com/Coherence-Daddy" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+  <a href="https://github.com/ShieldnestORG" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
     </svg>
@@ -2752,17 +2777,6 @@ EOF</code></pre>
     <text x="210" y="132" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, Menlo, monospace" font-weight="500" font-size="11" letter-spacing="4" fill="#F2F1ED" opacity="0.65">FAITH-DRIVEN TECHNOLOGY</text>
   </svg>
 </a>
-
-<!-- Per-slide AdSense banner — fills lazily on first ad-eligible slide -->
-<aside class="tutorial-ad" id="tutorial-ad" aria-label="Advertisement">
-  <div class="tutorial-ad-label">Advertisement</div>
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-1882924299982046"
-       data-ad-slot="6522431533"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</aside>
 
 <!-- Floating nav controls -->
 <div class="nav-controls">
@@ -2815,16 +2829,6 @@ EOF</code></pre>
 
     // Expose current slide on body for CSS rules (e.g. hiding stamp on cover)
     document.body.dataset.currentSlide = String(current);
-
-    // Lazy-fill AdSense banner — only on ad-eligible slides, only once.
-    // Skip slides 0 (cover), 1 (user-type picker), 20 (closing) per AdSense
-    // policy (no ads on pages without primary content).
-    if (!window.__cdAdFilled && current !== 0 && current !== 1 && current !== total - 1) {
-      try {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        window.__cdAdFilled = true;
-      } catch (e) { /* adblocker / dev */ }
-    }
   }
 
   prevBtn.addEventListener('click', () => goTo(current - 1));
