@@ -73,6 +73,14 @@ Two side-by-side panes. Same UX. One of them is free.
 
 The presentation is the **same exact HTML** served at [coherencedaddy.com/tutorials/use-ollama-to-enhance-claude](https://coherencedaddy.com/tutorials/use-ollama-to-enhance-claude). Open it locally, host it yourself, or fork it for your own walkthroughs.
 
+## Companion tutorial
+
+If you want Claude Desktop wired to your Obsidian vault as a permanent semantic memory (with a one-click installer), see the sibling repo:
+
+→ **[Coherence-Daddy/give-obsidian-a-memory](https://github.com/Coherence-Daddy/give-obsidian-a-memory)** — *Local brain over your notes, indexed by BGE-M3, queryable by meaning. Ships with a one-click installer.*
+
+The two tutorials are independent — pick either or run both. This one is the lighter "two-engine" terminal setup; the other is the full Obsidian + local brain stack.
+
 ## Topics
 
 `claude-code` `ollama` `gemma` `llm-tools` `cost-optimization` `agentic-coding` `anthropic` `open-source-llm`
